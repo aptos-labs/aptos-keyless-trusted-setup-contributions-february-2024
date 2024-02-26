@@ -5,7 +5,9 @@ The folder `contributions` contains all `.zkey` files output by the Aptos OIDB t
 
 Each contribution may be verified by running the command 
 
-```npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contributions/<contribution_filename>.zkey -v```
+```
+npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contributions/<contribution_filename>.zkey -v
+```
 
 Upon completion, this will produce an output of the following form: 
 
