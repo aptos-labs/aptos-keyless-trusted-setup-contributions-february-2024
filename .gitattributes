@@ -1,0 +1,6 @@
+contributions filter=lfs diff=lfs merge=lfs -text
+contributions/main_00000.zkey filter=lfs diff=lfs merge=lfs -text
+contributions/main_00001.zkey filter=lfs diff=lfs merge=lfs -text
+contributions/main_00002.zkey filter=lfs diff=lfs merge=lfs -text
+contributions/main_00003.zkey filter=lfs diff=lfs merge=lfs -text
+*.zkey filter=lfs diff=lfs merge=lfs -text
