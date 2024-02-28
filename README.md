@@ -3,13 +3,13 @@
 
 The folder `contributions` contains all `.zkey` files output by the Aptos OIDB trusted setup. Each `.zkey` file corresponds to the contribution of one participant, so that i.e. `main_00004.zkey` corresponds to the output of the contribution made by participant 4. 
 
-To verify contributions, first install
+If needed, first [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). Then run the command
 
 ```
 npm install snarkjs@0.6.11
 ```
 
-which is the version of `snarkjs` used by our code which was used to run the setup ceremony. 
+to install the version of `snarkjs` used by our code which was used to run the setup ceremony. 
 
 Each contribution may be verified by running the command 
 
