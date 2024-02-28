@@ -3,7 +3,13 @@
 
 The folder `contributions` contains all `.zkey` files output by the Aptos OIDB trusted setup. Each `.zkey` file corresponds to the contribution of one participant, so that i.e. `main_00004.zkey` corresponds to the output of the contribution made by participant 4. 
 
-If needed, first [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). Then run the command
+If needed, first [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), and also [install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). Then run the commands
+
+```
+nvm use 18
+```
+
+and
 
 ```
 npm install snarkjs@0.6.11
@@ -55,4 +61,18 @@ The final verification key can be exported using
 
 ```
 npx snarkjs@0.6.11 zkey export verificationkey <final contribution name>.zkey verification_key.vkey
+```
+
+# Reproducing the initial .zkey file
+
+To reproduce the initial `.zkey` file, run the command
+
+```
+npx snarkjs@0.6.11 groth16 setup main.r1cs ./powersOfTau28_hez_final_21.ptau initial.zkey -v
+```
+
+The `b2sum` hash of the resulting `.zkey` file should match that of `main_00000.zkey`. This hash value is
+
+```
+d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
 ```
