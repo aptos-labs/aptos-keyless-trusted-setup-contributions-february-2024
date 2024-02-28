@@ -53,7 +53,9 @@ Upon completion, this will produce an output of the following form:
 [INFO]  snarkJS: ZKey Ok!
 ```
 
-This is a list of all contribution hashes up to and including the current contribution that you have just verified. If you participated in the setup, you can verify that your contribution is being used correctly by running this command on the `.zkey` file corresponding to your contribution, and comparing the output contribution hash to the one which was printed out when you finished contributing during the ceremony. Note that the contribution hash is not simply a hash of the `.zkey` file.
+This is a list of all contribution hashes up to and including the current contribution that you have just verified. If you participated in the setup, you can verify that your contribution is being used correctly by running this command on the final `.zkey` file, and comparing the output contribution hash corresponding to your contribution to the one which was printed out when you finished contributing during the ceremony. 
+
+Note that the contribution hash is not simply a hash of the `.zkey` file, but a hash of the participant-specific parameters stored by every `.zkey` file after a participant's contribution has been made. Verification on the `i`-th `.zkey` file includes checks on these parameters for participants `1` through `i`. The output of this process is used in verifying the `.zkey` file overall. 
 
 # Exporting the verification key
 
