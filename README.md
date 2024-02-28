@@ -3,6 +3,14 @@
 
 The folder `contributions` contains all `.zkey` files output by the Aptos OIDB trusted setup. Each `.zkey` file corresponds to the contribution of one participant, so that i.e. `main_00004.zkey` corresponds to the output of the contribution made by participant 4. 
 
+To verify contributions, first install
+
+```
+npm install snarkjs@0.6.11
+```
+
+which is the version of `snarkjs` used by our code which was used to run the setup ceremony. 
+
 Each contribution may be verified by running the command 
 
 ```
@@ -39,8 +47,5 @@ Upon completion, this will produce an output of the following form:
 [INFO]  snarkJS: ZKey Ok!
 ```
 
-This is a list of all contribution hashes up to and including the current contribution that you have just verified. If you participated in the setup, you can verify that your contribution is being used correctly by running this command on the `.zkey` file corresponding to your contribution, and comparing the output contribution hash to the one which was printed out when you finished contributing during the ceremony. Note that the contribution hash is not simple a hash of the `.zkey` file.
-
-TODO: Is the most recent contribution hash recomputed from the .zkey file? It should be.
-
+This is a list of all contribution hashes up to and including the current contribution that you have just verified. If you participated in the setup, you can verify that your contribution is being used correctly by running this command on the `.zkey` file corresponding to your contribution, and comparing the output contribution hash to the one which was printed out when you finished contributing during the ceremony. Note that the contribution hash is not simply a hash of the `.zkey` file.
 
