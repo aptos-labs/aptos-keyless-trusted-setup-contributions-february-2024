@@ -78,3 +78,26 @@ The `b2sum` hash of the resulting `.zkey` file should match that of `main_00000.
 ```
 d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
 ```
+# Applying the randomness beacon
+
+To eliminate potential bias, we apply the [Drand randomness beacon](https://drand.love/) to the final `.zkey` file to obtain our final `.zkey` file to be used in production. To regenerate our randomness, first [follow the instructions here](https://drand.love/developer/drand-client/#installation) and then run
+
+```
+./drand-client --round 3793809 \
+--chain-hash 8990e7a9aaed2ffed73dbd7092123d6f289930540d7651336225dc172e51b2ce \
+--url http://api.drand.sh \
+--relay /dnsaddr/api.drand.sh
+3793809	da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565
+```
+
+which should output round number `3793809` and randomness
+
+```
+da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565
+```
+
+You can then recreate the final `.zkey` file by running
+
+```
+npx snarkjs@0.6.11 zkey beacon contributions/main_00003.zkey main_final.zkey da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565 10
+```
