@@ -101,3 +101,19 @@ You can then recreate the final `.zkey` file by running
 ```
 npx snarkjs@0.6.11 zkey beacon contributions/main_00003.zkey main_final.zkey da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565 10
 ```
+
+This should output
+
+```
+[INFO]  snarkJS: Contribution Hash: 
+		68cc94c2 b36e6078 3155c3cb d5bfb4eb
+		18e9bccb a09663a3 3ca9c442 51dfc360
+		6fae9343 25d9193c 69650d86 940bd042
+		c64acffd 0b406fee 4bdc3d68 1db72d7d
+```
+
+As with other contributions, this `.zkey` file may be verified by running
+
+```
+npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau main_final.zkey -v
+```
