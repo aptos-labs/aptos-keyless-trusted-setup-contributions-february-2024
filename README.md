@@ -1,3 +1,18 @@
+# Verifying the Phase 1 Powers of Tau File
+
+The powers of tau file used was downloaded from the link provided here in the [Snarkjs README](https://github.com/iden3/snarkjs/blob/master/README.md#7-prepare-phase-2), with the file titled `powersOfTau28_hez_final_21.ptau`. This `.ptau` file contains 54 contributions and a random beacon. Its `b2sum` hash is 
+
+```
+9aef0573cef4ded9c4a75f148709056bf989f80dad96876aadeb6f1c6d062391f07a394a9e756d16f7eb233198d5b69407cca44594c763ab4a5b67ae73254678
+``` 
+
+To verify this file, run 
+
+```
+npx snarkjs@0.6.11 powersoftau verify powersOfTau28_hez_final_21.ptau -v
+```
+
+
 # Verifying Individual Contributions
 
 
