@@ -18,7 +18,7 @@ to install the version of `snarkjs` used by our code which was used to run the s
 
 # Verifying the Phase 1 Powers of Tau File
 
-The powers of tau file used was downloaded from the link provided here in the [Snarkjs README](https://github.com/iden3/snarkjs/blob/master/README.md#7-prepare-phase-2), with the file titled `powersOfTau28_hez_final_21.ptau`. This `.ptau` file contains 54 contributions and a random beacon. Its `b2sum` hash is 
+The powers of tau file used was downloaded from one of the links provided here in the [Snarkjs README](https://github.com/iden3/snarkjs/blob/master/README.md#7-prepare-phase-2), as the file titled `powersOfTau28_hez_final_21.ptau`. This `.ptau` file contains 54 contributions and a random beacon. Its `b2sum` hash is 
 
 ```
 9aef0573cef4ded9c4a75f148709056bf989f80dad96876aadeb6f1c6d062391f07a394a9e756d16f7eb233198d5b69407cca44594c763ab4a5b67ae73254678
@@ -101,11 +101,11 @@ Upon completion, this will produce an output of the following form:
 
 This is a list of all contribution hashes up to and including the current contribution that you have just verified. If you participated in the setup, you can verify that your contribution is being used correctly by running this command on the final `.zkey` file, `contributions/main_final.zkey`, and comparing the output contribution hash corresponding to your contribution to the one which was printed out when you finished contributing during the ceremony. 
 
-Note that the contribution hash is not simply a hash of the `.zkey` file, but a hash of the participant-specific parameters stored by every `.zkey` file after a participant's contribution has been made. Verification on the `i`-th `.zkey` file includes checks on these parameters for participants `1` through `i`. The output of this process is used in verifying the `.zkey` file overall. 
+Note that the contribution hash is not simply a hash of the `.zkey` file, but a hash of the participant-specific parameters stored by every `.zkey` file after a participant's contribution has been made. Verification on the `i`-th `.zkey` file includes checks on these parameters for participants `1` through `i`. The output of this process is used in verifying the `.zkey` file overall when running the above `zkey verify` command. 
 
 # Applying the randomness beacon
 
-To eliminate potential bias, we apply the [Drand randomness beacon](https://drand.love/) to the final `.zkey` file to obtain our final `.zkey` file to be used in production. To regenerate our randomness, first [follow the instructions here](https://drand.love/developer/drand-client/#installation) and then run
+To eliminate potential bias, we apply the [Drand randomness beacon](https://drand.love/) to the final `.zkey` file to obtain our final `.zkey` file for use in production. To regenerate our randomness, first [follow the instructions here](https://drand.love/developer/drand-client/#installation) and then run
 
 ```
 ./drand-client --round 3793809 \
@@ -143,12 +143,18 @@ As with other contributions, this `.zkey` file may be verified by running
 npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contributions/main_final.zkey -v
 ```
 
-# Exporting the verification key
+# Reproducing the verification key
 
 The final verification key can be exported using 
 
 ```
-npx snarkjs@0.6.11 zkey export verificationkey <final contribution name>.zkey verification_key.vkey
+npx snarkjs@0.6.11 zkey export verificationkey contributions/main_final.zkey verification_key.vkey
+```
+
+Its `b2sum` hash is
+
+```
+c875deca3fcc691279d09acf34a83c5400d23d366ca7d310c7f3ca57fc2ca0e6d9f55bf417b5f8ee430b91b07552b843d450b3818cca16088f58cdc07669b975
 ```
 
 # Participant List
