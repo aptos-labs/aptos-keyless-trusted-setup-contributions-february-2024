@@ -148,8 +148,16 @@ This should output
 As with other contributions, this `.zkey` file may be verified by running
 
 ```
-npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contributions/main_final.zkey -v
+npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau main_final.zkey -v
 ```
+
+The `b2sum` hash of the resulting `main_final.zkey` should be 
+
+```
+d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
+```
+
+which is identical to the `b2sum` hash of `contributions/main_final.zkey`.
 
 # Reproducing the verification key
 
