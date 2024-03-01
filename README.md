@@ -151,4 +151,114 @@ The final verification key can be exported using
 npx snarkjs@0.6.11 zkey export verificationkey <final contribution name>.zkey verification_key.vkey
 ```
 
+# Participant List
 
+The list of participants who both completed their contribution and consented to have their identity listed are presented below. We would like to sincerely thank both them and those who have chosen to remain anonymous for contributing to the security of Aptos Keyless. 
+
+```
+Hudson Jang
+Silviu Gae
+Daniel Porteous
+winlin
+Anne B
+David Wolinsky
+Brian Li
+Tim Ch
+Olrise
+Max Kaplan
+Greg Nazario
+Prasanna Gautam
+Rustie Lin
+Keyrock
+Edouard Lavidalle
+David Conroy
+Robert Chen
+Geoff Tang
+Brian Murphy
+Saanika
+Richard Zhang
+Marcus | Elagabalx
+Kirill
+Anna Maria
+Vineeth Kashyap
+spichloner
+HWANGJAE LEE
+Sherry Xiao
+Maayan
+Marco Ilardi
+Xianyun Li
+Anna
+Christopher Dowle
+Aaron Lint
+Christian Theilemann
+Taras
+William White
+KappaRoss
+Ye Park
+Brian Boehlke
+Zekun Li
+Pavel Zykin
+Hyung-Kyu Choi (DSRV)
+Vladislav Anikeev
+Yuun Lim
+Pacobits | Stakely
+Victor Gao
+Alyssa Ponzo
+Artsiom Holikau
+Aleksandre Khokhiashvili
+Aaron Gao
+Blake Zimmerman
+Philip Vu
+Dmytro
+Darren Park
+Schultzie
+Slava
+Bowen Yang
+Greg North
+Ahri
+Anto
+Gabriele Della Casa Venturelli
+hyerim kim
+change
+Mason Hall
+Sasha Spiegelman
+Davide
+Kshitij Chakravarty
+John Youngseok Yang
+Evgeny Garanin
+Alin Tomescu
+mason money
+Avery
+antotg
+Andrea Cappa
+Shachindra
+Renee Tso
+guguru
+Andrei
+Benny Pinkas
+Teng Zhang
+Junha Park
+Jumanzi Han
+Young Yan Liauw
+Josh Lind
+Zekun Wang
+Perry Randall
+Junkil Park
+Jad
+Polina Voloshina
+Lazy Notre
+Mark Ellis
+Jill Xu
+Kent White
+Maksim Voloshin
+Larry Liu
+Zhuolun Xiang
+CryptoJack
+moran666666
+Rex Fernando
+Michael Straka
+Aleks
+Darron Park
+Phil
+Suryansh
+```
