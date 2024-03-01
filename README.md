@@ -16,11 +16,36 @@ To verify this file, run
 npx snarkjs@0.6.11 powersoftau verify powersOfTau28_hez_final_21.ptau -v
 ```
 
+# Reproducing the .r1cs file
+
+To reproduce `main.r1cs`, follow the instructions at the [Aptos Keyless Circuit Repo](https://github.com/aptos-labs/aptos-keyless-circuit). The hash of the resulting `.r1cs` file should be 
+
+```
+18d68f469a6ead62aafcc9c78fa1b99b4391b9a5acfca2be62722503684f98ba3d84a764d2aa9143898797bf33ab0e4c9fb2584e2afa660e0100cc8af7eb5226
+```
+
+This provides a link between our circuit code and the trusted setup, ensuring you can verify the setup was done over the correct codebase. 
+
+# Reproducing the initial .zkey file
+
+To reproduce the initial `.zkey` file, run the command
+
+```
+npx snarkjs@0.6.11 groth16 setup main.r1cs ./powersOfTau28_hez_final_21.ptau initial.zkey -v
+```
+
+The `b2sum` hash of the resulting `.zkey` file should match that of `main_00000.zkey`. This hash value is
+
+```
+d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
+```
+
+
 
 # Verifying Individual Contributions
 
 
-The folder `contributions` contains all `.zkey` files output by the Aptos OIDB trusted setup. Each `.zkey` file corresponds to the contribution of one participant, so that i.e. `main_00004.zkey` corresponds to the output of the contribution made by participant 4. 
+The folder `contributions` contains all `.zkey` files output by the Aptos OIDB trusted setup. Each `.zkey` file corresponds to the contribution of one participant, in the order of their having participated, so that i.e. `main_00004.zkey` corresponds to the output of the contribution made by the 4-th participant to have completed their contribution.
 
 If needed, first [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), and also [install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). Then run the commands
 
@@ -84,29 +109,6 @@ The final verification key can be exported using
 npx snarkjs@0.6.11 zkey export verificationkey <final contribution name>.zkey verification_key.vkey
 ```
 
-# Reproducing the .r1cs file
-
-To reproduce `main.r1cs`, follow the instructions at the [Aptos Keyless Circuit Repo](https://github.com/aptos-labs/aptos-keyless-circuit). The hash of the resulting `.r1cs` file should be 
-
-```
-18d68f469a6ead62aafcc9c78fa1b99b4391b9a5acfca2be62722503684f98ba3d84a764d2aa9143898797bf33ab0e4c9fb2584e2afa660e0100cc8af7eb5226
-```
-
-This provides a link between our circuit code and the trusted setup, ensuring you can verify the setup was done over the correct codebase. 
-
-# Reproducing the initial .zkey file
-
-To reproduce the initial `.zkey` file, run the command
-
-```
-npx snarkjs@0.6.11 groth16 setup main.r1cs ./powersOfTau28_hez_final_21.ptau initial.zkey -v
-```
-
-The `b2sum` hash of the resulting `.zkey` file should match that of `main_00000.zkey`. This hash value is
-
-```
-d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
-```
 # Applying the randomness beacon
 
 To eliminate potential bias, we apply the [Drand randomness beacon](https://drand.love/) to the final `.zkey` file to obtain our final `.zkey` file to be used in production. To regenerate our randomness, first [follow the instructions here](https://drand.love/developer/drand-client/#installation) and then run
