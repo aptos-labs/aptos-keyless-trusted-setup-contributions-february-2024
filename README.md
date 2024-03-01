@@ -24,6 +24,8 @@ To reproduce `main.r1cs`, follow the instructions at the [Aptos Keyless Circuit 
 18d68f469a6ead62aafcc9c78fa1b99b4391b9a5acfca2be62722503684f98ba3d84a764d2aa9143898797bf33ab0e4c9fb2584e2afa660e0100cc8af7eb5226
 ```
 
+which is identical to the `b2sum` hash of `main.r1cs` in this repo.
+
 This provides a link between our circuit code and the trusted setup, ensuring you can verify the setup was done over the correct codebase. 
 
 # Reproducing the initial .zkey file
@@ -34,7 +36,7 @@ To reproduce the initial `.zkey` file, run the command
 npx snarkjs@0.6.11 groth16 setup main.r1cs ./powersOfTau28_hez_final_21.ptau initial.zkey -v
 ```
 
-The `b2sum` hash of the resulting `.zkey` file should match that of `main_00000.zkey`. This hash value is
+The `b2sum` hash of the resulting `.zkey` file should match that of `contributions/main_00000.zkey`. This hash value is
 
 ```
 d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
@@ -101,14 +103,6 @@ This is a list of all contribution hashes up to and including the current contri
 
 Note that the contribution hash is not simply a hash of the `.zkey` file, but a hash of the participant-specific parameters stored by every `.zkey` file after a participant's contribution has been made. Verification on the `i`-th `.zkey` file includes checks on these parameters for participants `1` through `i`. The output of this process is used in verifying the `.zkey` file overall. 
 
-# Exporting the verification key
-
-The final verification key can be exported using 
-
-```
-npx snarkjs@0.6.11 zkey export verificationkey <final contribution name>.zkey verification_key.vkey
-```
-
 # Applying the randomness beacon
 
 To eliminate potential bias, we apply the [Drand randomness beacon](https://drand.love/) to the final `.zkey` file to obtain our final `.zkey` file to be used in production. To regenerate our randomness, first [follow the instructions here](https://drand.love/developer/drand-client/#installation) and then run
@@ -148,3 +142,13 @@ As with other contributions, this `.zkey` file may be verified by running
 ```
 npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau main_final.zkey -v
 ```
+
+# Exporting the verification key
+
+The final verification key can be exported using 
+
+```
+npx snarkjs@0.6.11 zkey export verificationkey <final contribution name>.zkey verification_key.vkey
+```
+
+
