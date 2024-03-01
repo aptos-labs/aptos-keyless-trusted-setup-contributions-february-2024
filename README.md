@@ -1,3 +1,7 @@
+# Downloading large files
+
+To download the large `.r1cs`, `.ptau`, and `.zkey` files in this repo, [install git-lfs](https://git-lfs.com/). 
+
 # Verifying the Phase 1 Powers of Tau File
 
 The powers of tau file used was downloaded from the link provided here in the [Snarkjs README](https://github.com/iden3/snarkjs/blob/master/README.md#7-prepare-phase-2), with the file titled `powersOfTau28_hez_final_21.ptau`. This `.ptau` file contains 54 contributions and a random beacon. Its `b2sum` hash is 
