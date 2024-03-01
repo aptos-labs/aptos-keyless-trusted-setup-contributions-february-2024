@@ -16,6 +16,14 @@ npm install snarkjs@0.6.11
 
 to install the version of `snarkjs` used by our code which was used to run the setup ceremony. 
 
+To verify the hash values of various files presented in this document, ensure [Homebrew is installed](https://docs.brew.sh/Installation) and run 
+
+```
+brew install b2sum
+```
+
+The `b2sum` hash of a file may be computed by running `b2sum <filename>`.
+
 # Verifying the Phase 1 Powers of Tau File
 
 The powers of tau file used was downloaded from one of the links provided here in the [Snarkjs README](https://github.com/iden3/snarkjs/blob/master/README.md#7-prepare-phase-2), as the file titled `powersOfTau28_hez_final_21.ptau`. This `.ptau` file contains 54 contributions and a random beacon. Its `b2sum` hash is 
@@ -148,7 +156,7 @@ npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contrib
 The final verification key can be exported using 
 
 ```
-npx snarkjs@0.6.11 zkey export verificationkey contributions/main_final.zkey verification_key.vkey
+npx snarkjs@0.6.11 zkey export verificationkey contributions/main_final.zkey verification_key_regen.vkey
 ```
 
 Its `b2sum` hash is
