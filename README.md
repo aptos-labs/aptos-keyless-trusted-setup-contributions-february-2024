@@ -47,7 +47,7 @@ cd templates
 circom -l . main.circom --r1cs
 ```
 
-. The `b2sum` hash of the resulting `.r1cs` file should be 
+The `b2sum` hash of the resulting `main.r1cs` file should be 
 
 ```
 18d68f469a6ead62aafcc9c78fa1b99b4391b9a5acfca2be62722503684f98ba3d84a764d2aa9143898797bf33ab0e4c9fb2584e2afa660e0100cc8af7eb5226
