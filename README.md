@@ -40,7 +40,14 @@ npx snarkjs@0.6.11 powersoftau verify powersOfTau28_hez_final_21.ptau -v
 
 # Reproducing the .r1cs file
 
-To reproduce `main.r1cs`, follow the instructions at the [Aptos Keyless Circuit Repo](https://github.com/aptos-labs/aptos-keyless-circuit). The `b2sum` hash of the resulting `.r1cs` file should be 
+To reproduce `main.r1cs`, clone the [Aptos Keyless Circuit Repo](https://github.com/aptos-labs/aptos-keyless-circuit), checkout commit `2a1d445a49d212fa55c322e6f3373631bc74140a`, and run the following commands:
+
+```
+cd templates
+circom -l . main.circom --r1cs
+```
+
+. The `b2sum` hash of the resulting `.r1cs` file should be 
 
 ```
 18d68f469a6ead62aafcc9c78fa1b99b4391b9a5acfca2be62722503684f98ba3d84a764d2aa9143898797bf33ab0e4c9fb2584e2afa660e0100cc8af7eb5226
