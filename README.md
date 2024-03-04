@@ -1,6 +1,6 @@
 # WARNING
 
-This repo is very large. Before cloning, please follow the instructions below in "Setup" to avoid downloading unnecessary data. 
+This repo is very large. Before cloning, please follow the instructions below in "Downloading Files" to avoid downloading unnecessary data. 
 
 # Downloading Files
 
