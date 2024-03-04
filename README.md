@@ -104,7 +104,7 @@ Each contribution may be verified by running the command
 npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contributions/<contribution_filename>.zkey -v
 ```
 
-Upon completion, this will produce an output of the following form: 
+Depending on your machine, this commands can take upwards of 20 minutes. Upon completion, it will produce an output of the following form: 
 
 ```
 [INFO]  snarkJS: Circuit Hash: 
@@ -168,7 +168,7 @@ You can recreate the final `.zkey` file by running
 npx snarkjs@0.6.11 zkey beacon contributions/main_00141.zkey main_final.zkey da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565 10 -v
 ```
 
-This should output
+This command may take 10-15 minutes. It should output
 
 ```
 [INFO]  snarkJS: Contribution Hash: 
@@ -213,109 +213,109 @@ This should be identical to the `verification_key.vkey` file already in the repo
 The list of participants who both completed their contribution and consented to have their identity listed are presented below. We would like to sincerely thank both them and those who have chosen to remain anonymous for contributing to the security of Aptos Keyless. 
 
 ```
-Hudson Jang
-Silviu Gae
-Daniel Porteous
-winlin
-Anne B
-David Wolinsky
-Brian Li
-Tim Ch
-Olrise
-Max Kaplan
-Greg Nazario
-Prasanna Gautam
-Rustie Lin
-Keyrock
-Edouard Lavidalle
-David Conroy
-Robert Chen
-Geoff Tang
-Brian Murphy
-Saanika
-Richard Zhang
-Marcus | Elagabalx
-Kirill
-Anna Maria
-Vineeth Kashyap
-spichloner
-HWANGJAE LEE
-Sherry Xiao
-Maayan
-Marco Ilardi
-Xianyun Li
-Anna
-Christopher Dowle
-Aaron Lint
-Christian Theilemann
-Taras
-William White
-KappaRoss
-Ye Park
-Brian Boehlke
-Zekun Li
-Pavel Zykin
-Hyung-Kyu Choi (DSRV)
-Vladislav Anikeev
-Yuun Lim
-Pacobits | Stakely
-Victor Gao
-Alyssa Ponzo
-Artsiom Holikau
-Aleksandre Khokhiashvili
 Aaron Gao
-Blake Zimmerman
-Philip Vu
-Dmytro
-Darren Park
-Schultzie
-Slava
-Bowen Yang
-Greg North
+Aaron Lint
 Ahri
-Anto
-Gabriele Della Casa Venturelli
-hyerim kim
-change
-Mason Hall
-Sasha Spiegelman
-Davide
-Kshitij Chakravarty
-John Youngseok Yang
-Evgeny Garanin
-Alin Tomescu
-mason money
-Avery
-antotg
-Andrea Cappa
-Shachindra
-Renee Tso
-guguru
-Andrei
-Benny Pinkas
-Teng Zhang
-Junha Park
-Jumanzi Han
-Young Yan Liauw
-Josh Lind
-Zekun Wang
-Perry Randall
-Junkil Park
-Jad
-Polina Voloshina
-Lazy Notre
-Mark Ellis
-Jill Xu
-Kent White
-Maksim Voloshin
-Larry Liu
-Zhuolun Xiang
-CryptoJack
-moran666666
-Rex Fernando
-Michael Straka
 Aleks
+Aleksandre Khokhiashvili
+Alin Tomescu
+Alyssa Ponzo
+Andrea Cappa
+Andrei
+Anna
+Anna Maria
+Anne B
+Anto
+antotg
+Artsiom Holikau
+Avery
+Benny Pinkas
+Blake Zimmerman
+Bowen Yang
+Brian Boehlke
+Brian Li
+Brian Murphy
+change
+Christian Theilemann
+Christopher Dowle
+CryptoJack
+Daniel Porteous
+Darren Park
 Darron Park
+David Conroy
+David Wolinsky
+Davide
+Dmytro
+Edouard Lavidalle
+Evgeny Garanin
+Gabriele Della Casa Venturelli
+Geoff Tang
+Greg Nazario
+Greg North
+guguru
+HWANGJAE LEE
+Hudson Jang
+hyerim kim
+Hyung-Kyu Choi (DSRV)
+Jad
+Jill Xu
+John Youngseok Yang
+Josh Lind
+Jumanzi Han
+Junha Park
+Junkil Park
+KappaRoss
+Kent White
+Keyrock
+Kirill
+Kshitij Chakravarty
+Larry Liu
+Lazy Notre
+Maayan
+Maksim Voloshin
+Marco Ilardi
+Marcus | Elagabalx
+Mark Ellis
+Mason Hall
+mason money
+Max Kaplan
+moran666666
+Michael Straka
+Olrise
+Pacobits | Stakely
+Pavel Zykin
+Perry Randall
 Phil
+Philip Vu
+Polina Voloshina
+Prasanna Gautam
+Renee Tso
+Rex Fernando
+Richard Zhang
+Robert Chen
+Rustie Lin
+Saanika
+Sasha Spiegelman
+Schultzie
+Shachindra
+Sherry Xiao
+Silviu Gae
+Slava
+spichloner
 Suryansh
+Taras
+Teng Zhang
+Tim Ch
+Victor Gao
+Vineeth Kashyap
+Vladislav Anikeev
+William White
+winlin
+Xianyun Li
+Ye Park
+Young Yan Liauw
+Yuun Lim
+Zekun Li
+Zekun Wang
+Zhuolun Xiang
 ```
