@@ -146,10 +146,10 @@ This should output
 
 ```
 [INFO]  snarkJS: Contribution Hash: 
-		58b4bcad 0b9c62cd 1cbd1671 ac267e9c
-		18d943f4 2e6a2992 d67e571f 4738969c
-		48f73ad3 d2e01828 6f395a33 48038b9d
-		eff3e750 dd2dfcff 82bf8da5 2b7b844d
+		fe2a67c9 267a89ac 401e1e0c f6967df5
+		84f10fcd 07f49b71 cd204771 f7eff35f
+		f60bc605 195b1912 0b698f0b 15b4247e
+		84188144 2c7bd57a 9143de22 430379cd
 ```
 
 As with other contributions, this `.zkey` file may be verified by running
@@ -161,7 +161,7 @@ npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau main_fi
 The `b2sum` hash of the resulting `main_final.zkey` should be 
 
 ```
-d10eb2e278167011a7a205bdf3888d7df1723c8079243a81156092459b9f7341597aeba719187d82d11bfa16b3cba0955260520477d3094c2ffc7dbc99d2f0fa
+6f603ff9f8cb0d66fa6c86531fae6a7e1b73b9ccfa6bb42f4c2e64bbf6e65f1e6994ace9ad84b21338c19242125123cf066db74b6fdd65bf8dd219f1d55e10e9
 ```
 
 which is identical to the `b2sum` hash of `contributions/main_final.zkey`.
@@ -177,8 +177,10 @@ npx snarkjs@0.6.11 zkey export verificationkey contributions/main_final.zkey ver
 Its `b2sum` hash is
 
 ```
-c875deca3fcc691279d09acf34a83c5400d23d366ca7d310c7f3ca57fc2ca0e6d9f55bf417b5f8ee430b91b07552b843d450b3818cca16088f58cdc07669b975
+e1b963bac4c8f58b91e35b8695e72c0872e4fcd112f732450b03087088b7edf276d9ea8047f91df730a374a1d04fffcea04e3ace0a45c56e29f92950bcfdca0d
 ```
+
+This should be identical to the `verification_key.vkey` file already in the repo.
 
 # Participant List
 
