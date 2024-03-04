@@ -1,6 +1,26 @@
-# Setup
+# WARNING
+
+This repo is very large. Before cloning, please follow the instructions below in "Setup" to avoid downloading unnecessary data. 
+
+# Downloading Files
 
 To download the large `.r1cs`, `.ptau`, and `.zkey` files in this repo, [install git-lfs](https://git-lfs.com/). 
+
+Then run the following commands to clone the repo without the larger files:
+
+```
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/aptos-labs/aptos-keyless-trusted-setup-contributions
+
+cd aptos-keyless-trusted-setup-contributions
+```
+
+To get a specific file `<filename>`, run
+
+```
+git lfs pull --include "<filename>"
+```
+
+# Setup
 
 If needed, [install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), and also [install nvm](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating). Then run the commands
 
@@ -116,6 +136,12 @@ Upon completion, this will produce an output of the following form:
 
 This is a list of all contribution hashes up to and including the current contribution that you have just verified. If you participated in the setup, you can verify that your contribution is being used correctly by running this command on the final `.zkey` file, `contributions/main_final.zkey`, and comparing the output contribution hash corresponding to your contribution to the one which was printed out when you finished contributing during the ceremony. 
 
+This may be done with the following command:
+
+```
+npx snarkjs@0.6.11 zkey verify main.r1cs powersOfTau28_hez_final_21.ptau contributions/main_final.zkey -v
+```
+
 Note that the contribution hash is not simply a hash of the `.zkey` file, but a hash of the participant-specific parameters stored by every `.zkey` file after a participant's contribution has been made. Verification on the `i`-th `.zkey` file includes checks on these parameters for participants `1` through `i`. The output of this process is used in verifying the `.zkey` file overall when running the above `zkey verify` command. 
 
 # Applying the randomness beacon
@@ -139,7 +165,7 @@ da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565
 You can recreate the final `.zkey` file by running
 
 ```
-npx snarkjs@0.6.11 zkey beacon contributions/main_00139.zkey main_final.zkey da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565 10 -v
+npx snarkjs@0.6.11 zkey beacon contributions/main_00141.zkey main_final.zkey da44fdb1c88a25fd68d8581e077dd9e4d6d4c8af22c30b127a23dd8343995565 10 -v
 ```
 
 This should output
