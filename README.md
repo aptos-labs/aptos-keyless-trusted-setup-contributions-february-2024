@@ -75,7 +75,7 @@ The `b2sum` hash of the resulting `main.r1cs` file should be
 
 which is identical to the `b2sum` hash of `main.r1cs` in this repo.
 
-This provides a link between our circuit code and the trusted setup, ensuring you can verify the setup was done over the correct codebase. 
+This provides a link between our circuit code and the trusted setup, ensuring you can verify the setup was done over the correct codebase. Without this link, you could not know what circuit the setup was done over, making it potentially insecure. 
 
 # Reproducing the initial .zkey file
 
