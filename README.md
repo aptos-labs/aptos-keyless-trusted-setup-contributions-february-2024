@@ -197,7 +197,7 @@ which is identical to the `b2sum` hash of `contributions/main_final.zkey`.
 The final verification key can be exported using 
 
 ```
-npx snarkjs@0.6.11 zkey export verificationkey contributions/main_final.zkey verification_key_regen.vkey
+npx snarkjs@0.6.11 zkey export verificationkey contributions/main_final.zkey verification_key_regen.json
 ```
 
 Its `b2sum` hash is
@@ -206,7 +206,7 @@ Its `b2sum` hash is
 e1b963bac4c8f58b91e35b8695e72c0872e4fcd112f732450b03087088b7edf276d9ea8047f91df730a374a1d04fffcea04e3ace0a45c56e29f92950bcfdca0d
 ```
 
-This should be identical to the `verification_key.vkey` file already in the repo.
+This should be identical to the `verification_key.json` file already in the repo.
 
 # Participant List
 
