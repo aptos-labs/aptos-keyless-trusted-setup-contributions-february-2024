@@ -60,10 +60,10 @@ npx snarkjs@0.6.11 powersoftau verify powersOfTau28_hez_final_21.ptau -v
 
 # Reproducing the .r1cs file
 
-To reproduce `main.r1cs`, clone the [Aptos Keyless Circuit Repo](https://github.com/aptos-labs/aptos-keyless-circuit), checkout commit `2a1d445a49d212fa55c322e6f3373631bc74140a`, and run the following commands:
+To reproduce `main.r1cs`, clone the [Aptos Keyless Circuit Repo](https://github.com/aptos-labs/aptos-keyless-circuit/tree/legacy), checkout commit `tbd`, and run the following commands:
 
 ```
-cd templates
+cd templates/
 circom -l . main.circom --r1cs
 ```
 
